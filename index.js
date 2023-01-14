@@ -22,8 +22,9 @@ const db = require('./models'); // granting access to postgres database
 db.pet.findOrCreate({
     where: {name: 'Olive', nickname: 'Sackio / The Lunchlady'},
     defaults: {breed: 'pug', personality: 'The sweetest and most loyal lardsack in all the lands'}
-}).then(Results => {
-    console.log('Results of find-or-create function: ',Results.toJSON())
+}).then(([file, Results]) => {
+    console.log(file.toJSON())
+    console.log("new file logged?",Results)
 }).catch( err => {
     console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!: ',err, ' !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 });
