@@ -39,13 +39,13 @@ const db = require('./models'); // granting access to postgres database
             
 // UPDATE
 db.pet.update({
-    personality: 'Crazy pig and excitable'
+    personality: 'Crazy dog man thing and excitable'
 },{
     where: {
         name: 'Dirk'
     }
 }).then(rowsChanged =>{
-    console.log(rowsChanged.toJSON())
+    console.log(rowsChanged)
 }).catch(err => {
     console.log(err)
 });
