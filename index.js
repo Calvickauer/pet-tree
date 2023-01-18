@@ -5,16 +5,16 @@ const db = require('./models'); // granting access to postgres database
 
 // CREATE
 
-db.pet.create({
-    name: "Dirk",
-    nickname: "Dirk Diggler",
-    breed: "Pit Chow Sheppard Mix",
-    personality: 'Crazy beast of the weast'
-}).then(creature =>{
-    console.log("Inserted creature print: ", creature.toJSON());
-}).catch(error => {
-    console.log("ERROR %%%%%%%%%%%%%%%%%%%% === ",error, " === %%%%%%%%%%%%%%%%%%%%%%%%%");
-})
+// db.pet.create({
+//     name: "Dirk",
+//     nickname: "Dirk Diggler",
+//     breed: "Pit Chow Sheppard Mix",
+//     personality: 'Crazy beast of the weast'
+// }).then(creature =>{
+//     console.log("Inserted creature print: ", creature.toJSON());
+// }).catch(error => {
+//     console.log("ERROR %%%%%%%%%%%%%%%%%%%% === ",error, " === %%%%%%%%%%%%%%%%%%%%%%%%%");
+// })
 
 // READ 
 
@@ -60,4 +60,16 @@ db.pet.create({
 //     console.log('Deleted: ', deleted)
 // }).catch( err => {
 //     console.log('errrerrrerrrerr ',err, ' -----------++++++======+++++++-----------')
+// });
+
+
+// FIND ALL (READ)
+
+// db.pet.findAll()
+// .then(dog => {
+//     dog.forEach(pet => {
+//         console.log("Each dog here: => ", pet.toJSON())
+//     })
+// }).catch(err => {
+//     console.log('ERROR ERROR ERROR ',err, ' ERROR ERROR ERROR')
 // });
