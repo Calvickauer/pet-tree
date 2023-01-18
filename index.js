@@ -5,16 +5,16 @@ const db = require('./models'); // granting access to postgres database
 
 // CREATE
 
-// db.pet.create({
-//     name: "Lily",
-//     nickname: "Lily Pop",
-//     breed: "Pug",
-//     personality: 'Guard Pig'
-// }).then(creature =>{
-//     console.log("Inserted creature print: ", creature.toJSON());
-// }).catch(error => {
-//     console.log("ERROR %%%%%%%%%%%%%%%%%%%% === ",error, " === %%%%%%%%%%%%%%%%%%%%%%%%%");
-// })
+db.pet.create({
+    name: "Dirk",
+    nickname: "Dirk Diggler",
+    breed: "Pit Chow Sheppard Mix",
+    personality: 'Crazy beast of the weast'
+}).then(creature =>{
+    console.log("Inserted creature print: ", creature.toJSON());
+}).catch(error => {
+    console.log("ERROR %%%%%%%%%%%%%%%%%%%% === ",error, " === %%%%%%%%%%%%%%%%%%%%%%%%%");
+})
 
 // READ 
 
@@ -38,16 +38,26 @@ const db = require('./models'); // granting access to postgres database
             // });
             
 // UPDATE
-db.pet.update({
-    personality: 'Crazy dog man thing and excitable'
-},{
-    where: {
-        name: 'Dirk'
-    }
-}).then(rowsChanged =>{
-    console.log(rowsChanged)
-}).catch(err => {
-    console.log(err)
-});
+// db.pet.update({
+//     personality: 'Crazy dog man thing and excitable'
+// },{
+//     where: {
+//         name: 'Dirk'
+//     }
+// }).then(rowsChanged =>{
+//     console.log(rowsChanged)
+// }).catch(err => {
+//     console.log(err)
+// });
             
 // DELETE
+
+// db.pet.destroy({
+//     where: {
+//         name: "Dirk"
+//     }
+// }).then( deleted => {
+//     console.log('Deleted: ', deleted)
+// }).catch( err => {
+//     console.log('errrerrrerrrerr ',err, ' -----------++++++======+++++++-----------')
+// });
