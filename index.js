@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'html');
 
 
 app.get('/', function(req, res) {
-    res.send('Hello, World!');
+    res.sendFile(__dirname + '/views/home.html');
     // res.render('home');
 });
 
