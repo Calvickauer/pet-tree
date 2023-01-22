@@ -7,7 +7,22 @@ app.set('view engine', 'html');
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/home.html');
-    // res.render('home');
+});
+
+app.get('/about', function(req, res) {
+    res.sendFile(__dirname + '/views/about.html');
+});
+
+app.get('/dogs', function(req, res) {
+    res.sendFile(__dirname + '/views/dogs.html');
+});
+
+app.get('/cats', function(req, res) {
+    res.sendFile(__dirname + '/views/cats.html');
+});
+
+app.get('/petfamily', function(req, res) {
+    res.sendFile(__dirname + '/views/animals.html');
 });
 
 app.get('*', function(req, res){
