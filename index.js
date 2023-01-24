@@ -23,21 +23,21 @@ router.get('/about', function(req, res) {
     console.log('About page');
 });
 
-// router.get('/dogs', function(req, res) {
-//     res.sendFile(__dirname + '/views/dogs.html');
-// });
+router.get('/dogs', function(req, res) {
+    res.render('dogs');
+});
 
-// router.get('/cats', function(req, res) {
-//     res.sendFile(__dirname + '/views/cats.html');
-// });
+router.get('/cats', function(req, res) {
+    res.render('cats');
+});
 
-// router.get('/petfamily', function(req, res) {
-//     res.sendFile(__dirname + '/views/animals.html');
-// });
+router.get('/petfamily', function(req, res) {
+    res.render('animals');
+});
 
-// router.get('*', function(req, res){
-//     res.send('This Page does not exist buddy!');
-// })
+router.get('*', function(req, res){
+    res.send('This Page does not exist buddy!');
+})
 
 app.use(router);
 
