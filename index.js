@@ -4,26 +4,16 @@ const router = express.Router();
 const db = require('./models');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
-
-// app.get('/', function(req, res) {
-//     console.log('yo yoo');
-//     res.sendFile(__dirname + '/views/home.html');
-// });
 
 router.get('/', async (req, res) => {
     console.log('hey hey');
     let family = await db.pet.findAll();
     family = family.map(F => F.toJSON());
     console.log(family);
-    res.sendFile(__dirname + '/views/home.html', {family: family});
+    res.render('home', {family: family});
   })
-
-// router.get('/', function (req, res, next) {
-//     console.log("Router Working");
-//     res.end();
-// })
 
 // app.get('/about', function(req, res) {
 //     res.sendFile(__dirname + '/views/about.html');
