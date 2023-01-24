@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const db = require('./models');
+const layouts = require('express-ejs-layouts');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
+app.use(layouts);
+
 
 
 router.get('/', async (req, res) => {
@@ -15,24 +18,24 @@ router.get('/', async (req, res) => {
     res.render('home', {family: family});
   })
 
-// app.get('/about', function(req, res) {
-//     res.sendFile(__dirname + '/views/about.html');
-//     console.log('About page');
-// });
+router.get('/about', function(req, res) {
+    res.render('about');
+    console.log('About page');
+});
 
-// app.get('/dogs', function(req, res) {
+// router.get('/dogs', function(req, res) {
 //     res.sendFile(__dirname + '/views/dogs.html');
 // });
 
-// app.get('/cats', function(req, res) {
+// router.get('/cats', function(req, res) {
 //     res.sendFile(__dirname + '/views/cats.html');
 // });
 
-// app.get('/petfamily', function(req, res) {
+// router.get('/petfamily', function(req, res) {
 //     res.sendFile(__dirname + '/views/animals.html');
 // });
 
-// app.get('*', function(req, res){
+// router.get('*', function(req, res){
 //     res.send('This Page does not exist buddy!');
 // })
 
