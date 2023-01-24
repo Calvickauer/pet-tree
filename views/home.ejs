@@ -13,11 +13,19 @@
             Welcome home to the Pet Tree!
         </h1>
         <h4>A place to keep track of your family pets</h4>
+    </div>
+    <div class="Home">
+        <h1>
+            List of all the pets in your family tree!
+        </h1>
+        <h4> Scroll down! </h4>
         <% let each = 1; %> 
         <% family.forEach(animal => { %>
-            <h2><%= each %> </h2>
-            <div>
-                <h5 class="card-title"> Name: <%= animal.name %> </h5>
+            <div class="each">
+                <h3> <%= each %>: <%= animal.name %> </h3>
+                <h5> Nickname: <%= animal.nickname %></h5>
+                <h5> Breed: <%= animal.breed %></h5>
+                <h5> Personality: <%= animal.personality %></h5>
             </div>
         <% each++ %> 
         <% }) %> 

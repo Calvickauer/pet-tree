@@ -1,19 +1,37 @@
-.Home__Title {
+
+body{
+    background-color: darkcyan;
+}
+
+.Home__Title{
+    text-align: center;
+    color: rgb(230, 255, 1);
+}
+
+.Home {
     margin-top: 100px;
     background-color: rgb(0, 4, 255);
     text-align: center;
     color: white;
     width: 400px;
-    height:fit-content;
+    height: 700px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid red;
+    border: 6px solid rgb(255, 255, 255);
     border-radius: 40px;
     padding: 20px;
+    overflow-y: scroll;
 }
-.Home__Title h1, a{
-    color: rgb(0, 255, 0);
+.Home h1, a{
+    color: rgb(255, 249, 249);
     border-color: white;
+}
+
+.each{
+    background-color: rgba(0, 0, 0, 0.636);
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid white;
 }
 
 
