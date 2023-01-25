@@ -8,8 +8,6 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.use(layouts);
 
-
-
 router.get('/', async (req, res) => {
     console.log('hey hey');
     let family = await db.pet.findAll();
@@ -17,6 +15,15 @@ router.get('/', async (req, res) => {
     console.log(family);
     res.render('home', {family: family});
   })
+
+//   router.get('/:id' , (req, res) => {
+//     ('SELECT * FROM pet WHERE id = ?',[req.params.id], (err, rows, fields) => {
+//     if (!err)
+//     res.send(rows);
+//     else
+//     console.log(err);
+//     })
+//     } );
 
 router.get('/about', function(req, res) {
     res.render('about');
