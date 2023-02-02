@@ -42,6 +42,24 @@ body{
     max-width: 400px;
 }
 
+.delete {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: red;
+    color: black;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.delete:hover{
+    background-color: rgb(125, 5, 5);
+    padding: 10px;
+    color: white;
+    border-color: black;
+}
+
 
 .About__Title {
     margin-top: 100px;
@@ -69,4 +87,12 @@ body{
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.formBox{
+    margin-top:20px;
 }

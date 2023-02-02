@@ -28,11 +28,11 @@
                         <h5> Nickname: <%= animal.nickname %></h5>
                         <h5> Breed: <%= animal.breed %></h5>
                         <h5> Personality: <%= animal.personality %></h5>
+                    </a>
+                        <form action="/<%=animal.id%>" method="POST" class="formBox">
+                            <button type="submit" value="DELETE" class="delete" id="delete">Remove <%= animal.name %></button>
+                        </form>
                     </div>
-                    <form action="/<%=animal.id%>" method="POST">
-                        <button type="submit" value="DELETE" class="btn">Remove</button>
-                    </form>
-                </a>
             </div>
         <% each++ %> 
         <% }) %> 
