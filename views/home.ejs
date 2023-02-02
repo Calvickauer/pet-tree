@@ -21,14 +21,19 @@
         <h4> Scroll down! </h4>
         <% let each = 1; %> 
         <% family.forEach(animal => { %>
-            <a href="/<%=animal.id%>" >
-                <div class="each">
-                    <h3> <%= each %>: <%= animal.name %> </h3>
-                    <h5> Nickname: <%= animal.nickname %></h5>
-                    <h5> Breed: <%= animal.breed %></h5>
-                    <h5> Personality: <%= animal.personality %></h5>
-                </div>
-            </a>
+            <div>
+                <a href="/<%=animal.id%>" >
+                    <div class="each">
+                        <h3> <%= each %>: <%= animal.name %> </h3>
+                        <h5> Nickname: <%= animal.nickname %></h5>
+                        <h5> Breed: <%= animal.breed %></h5>
+                        <h5> Personality: <%= animal.personality %></h5>
+                    </div>
+                    <form action="/<%=animal.id%>" method="POST">
+                        <button type="submit" value="DELETE" class="btn">Remove</button>
+                    </form>
+                </a>
+            </div>
         <% each++ %> 
         <% }) %> 
     </div>

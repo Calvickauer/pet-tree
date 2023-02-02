@@ -16,6 +16,32 @@ router.get('/', async (req, res) => {
     res.render('home', {family: family});
   })
 
+// router.delete('/pet/:id', (req, res) => {
+//     const petId = req.params.id;
+//     const sql = `DELETE FROM pet WHERE id = ${id}`;
+//     connection.query(sql, (error, results) => {
+//         if (error) throw error;
+//     // delete user logic here
+//     res.status(200).json({
+//       message: `Pet with ID ${petId} successfully deleted.`
+//     });
+//   });
+
+// router.get("/:petId", (req, res) => {
+//     console.log('*************************** -------------------- hitting route --------------------- **************************')
+//   });
+
+  router.post("/:petId", (req, res) => {
+    console.log('*************************** -------------------- hitting delete route --------------------- **************************')
+    db.pet.destroy({
+        where: {id: req.params.petId}
+      }).then(deleted => {
+        console.log('Destroyed')
+        console.log(deleted);
+        res.render('home');
+      })
+  });
+
 //   router.get('/:id' , (req, res) => {
 //     ('SELECT * FROM pet WHERE id = ?',[req.params.id], (err, rows, fields) => {
 //     if (!err)
